@@ -1,0 +1,1991 @@
+/********** Roboto FONT **************/
+@font-face {
+  font-family: "Roboto";
+  src: url("fonts/Roboto-Regular.eot");
+  src: url("fonts/Roboto-Regular.eot?#iefix") format("embedded-opentype"),
+    url("fonts/Roboto-Regular.woff2") format("woff2"),
+    url("fonts/Roboto-Regular.woff") format("woff"),
+    url("fonts/Roboto-Regular.ttf") format("truetype"),
+    url("fonts/Roboto-Regular.svg#Roboto-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("fonts/Roboto-Bold.eot");
+  src: url("fonts/Roboto-Bold.eot?#iefix") format("embedded-opentype"),
+    url("fonts/Roboto-Bold.woff2") format("woff2"),
+    url("fonts/Roboto-Bold.woff") format("woff"),
+    url("fonts/Roboto-Bold.ttf") format("truetype"),
+    url("fonts/Roboto-Bold.svg#Roboto-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("fonts/Roboto-Light.eot");
+  src: url("fonts/Roboto-Light.eot?#iefix") format("embedded-opentype"),
+    url("fonts/Roboto-Light.woff2") format("woff2"),
+    url("fonts/Roboto-Light.woff") format("woff"),
+    url("fonts/Roboto-Light.ttf") format("truetype"),
+    url("fonts/Roboto-Light.svg#Roboto-Light") format("svg");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("fonts/Roboto-Medium.eot");
+  src: url("fonts/Roboto-Medium.eot?#iefix") format("embedded-opentype"),
+    url("fonts/Roboto-Medium.woff2") format("woff2"),
+    url("fonts/Roboto-Medium.woff") format("woff"),
+    url("fonts/Roboto-Medium.ttf") format("truetype"),
+    url("fonts/Roboto-Medium.svg#Roboto-Medium") format("svg");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* roboto slab .font_regular */
+
+/* cyrillic-ext */
+@font-face {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotoslab/v25/BngbUXZYTXPIvIBgJJSb6s3BzlRRfKOFbvjojISmYmRjRdE.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+    U+FE2E-FE2F;
+}
+
+/* cyrillic */
+@font-face {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotoslab/v25/BngbUXZYTXPIvIBgJJSb6s3BzlRRfKOFbvjojISma2RjRdE.woff2) format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* greek-ext */
+@font-face {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotoslab/v25/BngbUXZYTXPIvIBgJJSb6s3BzlRRfKOFbvjojISmY2RjRdE.woff2) format("woff2");
+  unicode-range: U+1F00-1FFF;
+}
+
+/* greek */
+@font-face {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotoslab/v25/BngbUXZYTXPIvIBgJJSb6s3BzlRRfKOFbvjojISmbGRjRdE.woff2) format("woff2");
+  unicode-range: U+0370-03FF;
+}
+
+/* vietnamese */
+@font-face {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotoslab/v25/BngbUXZYTXPIvIBgJJSb6s3BzlRRfKOFbvjojISmYGRjRdE.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+    U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329,
+    U+1EA0-1EF9, U+20AB;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotoslab/v25/BngbUXZYTXPIvIBgJJSb6s3BzlRRfKOFbvjojISmYWRjRdE.woff2) format("woff2");
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF,
+    U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotoslab/v25/BngbUXZYTXPIvIBgJJSb6s3BzlRRfKOFbvjojISmb2Rj.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
+    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/********** Roboto FONT **************/
+body {
+  color: #000;
+  background: #fff;
+  font-size: 14px;
+  font-family: "Roboto";
+  font-weight: normal;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0px;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+a:focus,
+a:hover {
+  text-decoration: none;
+  color: #333;
+  /* color: #063a7e; */
+}
+
+/*** Common CSS ***/
+.w_40_cust {
+  width: 40%;
+}
+
+.w-60 {
+  width: 60% !important;
+}
+
+.c-w-10 {
+  width: 10% !important;
+}
+
+.c-w-13 {
+  width: 13% !important;
+}
+
+.c-w-20 {
+  width: 20% !important;
+}
+
+.c-w-30 {
+  width: 30% !important;
+}
+
+.c-w-35 {
+  width: 35% !important;
+}
+
+.c-w-37 {
+  width: 37% !important;
+}
+
+.c-w-40 {
+  width: 40% !important;
+}
+
+.c-w-45 {
+  width: 45% !important;
+}
+
+.c-w-50 {
+  width: 50% !important;
+}
+
+.c-w-55 {
+  width: 55% !important;
+}
+
+.c-w-60 {
+  width: 60% !important;
+}
+
+.c-w-70 {
+  width: 70% !important;
+}
+
+.c-w-80 {
+  width: 80% !important;
+}
+
+.c-w-82 {
+  width: 82% !important;
+}
+
+.c-w-83 {
+  width: 83% !important;
+}
+
+.c-w-85 {
+  width: 85% !important;
+}
+
+.c-w-90 {
+  width: 90% !important;
+}
+
+.c-w-100 {
+  width: 100% !important;
+}
+
+.minHeight_74 {
+  min-height: 88px;
+}
+
+.minWidth_20 {
+  min-width: 20px !important;
+}
+
+.minWidth_30 {
+  min-width: 30px !important;
+}
+
+.minWidth_40 {
+  min-width: 40px !important;
+}
+
+.minWidth_50 {
+  min-width: 50px !important;
+}
+
+.minWidth_60 {
+  min-width: 60px !important;
+}
+
+.minWidth_70 {
+  min-width: 70px !important;
+}
+
+.minWidth_80 {
+  min-width: 80px !important;
+}
+
+.minWidth_89 {
+  min-width: 89px !important;
+}
+
+.minWidth_90 {
+  min-width: 90px !important;
+}
+
+.minWidth_100 {
+  min-width: 100px !important;
+}
+
+.minWidth_118 {
+  min-width: 118px !important;
+}
+
+.minWidth_120 {
+  min-width: 120px !important;
+}
+
+.minWidth_121 {
+  min-width: 121px !important;
+}
+
+.minWidth_130 {
+  min-width: 130px !important;
+}
+
+.minWidth_140 {
+  min-width: 140px !important;
+}
+
+.minWidth_150 {
+  min-width: 150px !important;
+}
+
+.minWidth_160 {
+  min-width: 160px !important;
+}
+
+.minWidth_170 {
+  min-width: 170px !important;
+}
+
+.minWidth_180 {
+  min-width: 180px !important;
+}
+
+.minWidth_190 {
+  min-width: 190px !important;
+}
+
+.minWidth_200 {
+  min-width: 200px !important;
+}
+
+.minWidth_210 {
+  min-width: 210px !important;
+}
+
+.minWidth_220 {
+  min-width: 220px !important;
+}
+
+.minWidth_230 {
+  min-width: 230px !important;
+}
+
+.minWidth_250 {
+  min-width: 250px !important;
+}
+
+.minWidth_260 {
+  min-width: 260px !important;
+}
+
+.minWidth_265 {
+  min-width: 265px !important;
+}
+
+.minWidth_275 {
+  min-width: 275px !important;
+}
+
+.minWidth_280 {
+  min-width: 280px !important;
+}
+
+.minWidth_300 {
+  min-width: 300px !important;
+}
+
+.minWidth_310 {
+  min-width: 310px !important;
+}
+
+.minWidth_330 {
+  min-width: 330px !important;
+}
+
+.minWidth_350 {
+  min-width: 350px !important;
+}
+
+.minWidth_380 {
+  min-width: 380px !important;
+}
+
+.minWidth_400 {
+  min-width: 400px !important;
+}
+
+.maxWidth_30 {
+  max-width: 30px !important;
+}
+
+.maxWidth_50 {
+  max-width: 50px !important;
+}
+
+.maxWidth_100 {
+  max-width: 100px !important;
+}
+
+.maxWidth_120 {
+  max-width: 120px !important;
+}
+
+.maxWidth_130 {
+  max-width: 130px !important;
+}
+
+.maxWidth_140 {
+  max-width: 140px !important;
+}
+
+.maxWidth_150 {
+  max-width: 150px !important;
+}
+
+.width_50 {
+  width: 50px !important;
+}
+
+.font_normal {
+  font-weight: normal !important;
+}
+
+.font_light {
+  font-weight: 300 !important;
+}
+
+.font_medium {
+  font-weight: 500 !important;
+}
+
+.font_semiBold {
+  font-weight: 600 !important;
+}
+
+.font_bold {
+  font-weight: bold;
+}
+
+.fbold {
+  font-weight: bold !important;
+}
+
+.font0 {
+  font-size: inherit;
+}
+
+.font12 {
+  font-size: 12px !important;
+}
+
+.font13 {
+  font-size: 13px !important;
+}
+
+.font14 {
+  font-size: 14px !important;
+}
+
+.font16 {
+  font-size: 16px !important;
+}
+
+.font17 {
+  font-size: 17px !important;
+}
+
+.font18 {
+  font-size: 18px !important;
+}
+
+.font20 {
+  font-size: 20px !important;
+}
+
+.font22 {
+  font-size: 22px !important;
+}
+
+.font24 {
+  font-size: 24px !important;
+}
+
+.font26 {
+  font-size: 26px !important;
+}
+
+.font28 {
+  font-size: 28px !important;
+}
+
+.font30 {
+  font-size: 30px !important;
+}
+
+/*** Common CSS ***/
+.btn.customBtn_0 {
+  background: #0d70b7;
+  border-radius: 0px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 5px 0;
+  line-height: 20px;
+  margin-bottom: 12px;
+  min-width: 100px;
+}
+
+.btn.customBtn_0:hover {
+  background: #f57206;
+  border-radius: 0px;
+  color: #fff;
+  box-shadow: inherit;
+}
+
+.btn.grayBtn {
+  background: #adadad;
+  border: 1px solid #adadad;
+}
+
+.btn.grayBtn:hover {
+  background: #adadad;
+  border: 1px solid #adadad;
+}
+
+.btn.blueBtn {
+  background: #4472c4;
+  border: 1px solid #4472c4;
+}
+
+.btn.blueBtn:hover {
+  background: #4472c4;
+  border: 1px solid #4472c4;
+}
+
+.bg_white {
+  background: #fff;
+}
+
+.bg_gray {
+  background: #d4d4d4;
+}
+
+/*** Page scroll top Section CSS ***/
+.back-to-top {
+  cursor: pointer;
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  display: none;
+}
+
+.btn.back-to-top {
+  border-radius: 50px;
+  background: #e74c3c;
+  color: #fff;
+  z-index: 100;
+  border: 0px solid #fff;
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  padding: 6px 6px;
+}
+
+.btn.back-to-top:hover {
+  background: red;
+  color: #fff;
+}
+
+/* 004VENGAT */
+/* 20230620-TUESDAY */
+.share-button {
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+}
+
+/* 004VENGAT */
+/* 20230620-TUESDAY */
+.btn.share-button {
+  border-radius: 50px;
+  background: #e1c98a;
+  color: #fff;
+  z-index: 100;
+  border: 0px solid #fff;
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  padding: 6px 6px;
+}
+
+/* 004VENGAT */
+/* 20230620-TUESDAY */
+.btn.share-button:hover {
+  background: #fc9f00;
+  color: #fff;
+}
+
+/*** Page scroll top Section CSS ***/
+
+/*** Custom Horizontal Scrollbar CSS END ***/
+/****** Home Page CSS START ******/
+.pt_5 {
+  padding-top: 5px !important;
+}
+
+.pt_10 {
+  padding-top: 10px !important;
+}
+
+.pt_15 {
+  padding-top: 15px !important;
+}
+
+.pt_20 {
+  padding-top: 20px !important;
+}
+
+.pt_30 {
+  padding-top: 30px !important;
+}
+
+.pt_40 {
+  padding-top: 40px !important;
+}
+
+.pt_50 {
+  padding-top: 50px !important;
+}
+
+.pb_5 {
+  padding-bottom: 5px !important;
+}
+
+.pb_10 {
+  padding-bottom: 10px !important;
+}
+
+.pb_15 {
+  padding-bottom: 15px !important;
+}
+
+.pb_20 {
+  padding-bottom: 20px !important;
+}
+
+.pb_30 {
+  padding-bottom: 30px !important;
+}
+
+.pb_40 {
+  padding-bottom: 40px !important;
+}
+
+.pb_50 {
+  padding-bottom: 50px !important;
+}
+
+.mt_5 {
+  margin-top: 5px !important;
+}
+
+.mt_10 {
+  margin-top: 10px !important;
+}
+
+.mt_15 {
+  margin-top: 15px !important;
+}
+
+.mt_20 {
+  margin-top: 20px !important;
+}
+
+.mt_30 {
+  margin-top: 30px !important;
+}
+
+.mt_40 {
+  margin-top: 40px !important;
+}
+
+.mt_50 {
+  margin-top: 50px !important;
+}
+
+.mb_5 {
+  margin-bottom: 5px !important;
+}
+
+.mb_10 {
+  margin-bottom: 10px !important;
+}
+
+.mb_20 {
+  margin-bottom: 20px !important;
+}
+
+.mb_15 {
+  margin-bottom: 15px !important;
+}
+
+.mb_30 {
+  margin-bottom: 30px !important;
+}
+
+.mb_40 {
+  margin-bottom: 40px !important;
+}
+
+.mb_50 {
+  margin-bottom: 50px !important;
+}
+
+.mt_n24 {
+  margin-top: -26px;
+}
+
+.mt_70 {
+  margin-top: 70px !important;
+}
+
+/* 13.05.2024  start*/
+.electionTitle h1 {
+  font-size: 13px;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+  margin: 10px 0px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.progressModify {
+  height: 25px;
+  border-radius: 0px;
+  color: #fff;
+  background-color: #878787;
+}
+
+.labelFontSize {
+  font-size: 18px;
+}
+
+.progressbarModify {
+  padding-left: 10px;
+}
+
+.total p {
+  font-size: 18px;
+}
+
+.progressBg {
+  background-color: #950d19;
+  padding: 1px 20px 12px;
+  color: #fff;
+}
+
+.graphics {
+  background-color: #dbdbdb;
+}
+
+.graphics p {
+  font-size: 15px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.candidate {
+  text-transform: uppercase;
+
+}
+
+.candidateName {
+  position: absolute;
+  width: 100%;
+ top:-12px;
+  padding: 0px 0px;
+  left: 11%;
+}
+
+.candidateName h5 {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.candidateName p {
+  font-size: 12px;
+  text-wrap: pretty;
+}
+
+.wonPos {
+  position: absolute;
+  bottom: -86px;
+}
+
+.candidatePos {}
+
+.total {
+  margin-bottom: 5px;
+}
+
+.borderBottom {
+  position: relative;
+  justify-content: center;
+}
+
+.borderBottom::after {
+  content: "";
+  width: 100%;
+  height: 5px;
+  margin: 1px 12px;
+  border-bottom: 1px solid #bbaaab;
+}
+
+.borderCandidate {
+  border: 1px solid #cdcdcc;
+  /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+  padding: 17px 18px;
+}
+
+/* .borderCandidate1 {
+  border: 1px solid black;
+  padding: 20px 26px;
+}
+.borderCandidate2 {
+  border: 1px solid black;
+  padding: 18px 26px;
+} */
+
+.formModify {
+  border-radius: 0px;
+  width: 100%;
+  padding: 7px 6px;
+  background: black;
+  color: #ffff;
+  /* background: black !important; */
+  /* color: black !important; */
+}
+
+.icon_pos {
+  position: absolute;
+  right: 12px;
+  top: -5px;
+  font-size: 30px;
+  color: white;
+}
+
+/* .form-select {
+  --bs-form-select-bg-img: url("/assets/images/downC.svg");
+} */
+.dropDown {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+/* .dropDown::after {
+  content: "\f0d7";
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  right: 12px;
+  top: -5px;
+  font-size: 30px;
+  color: white;
+} */
+
+.state_bg {
+  background: #ecebeb;
+}
+
+.assembly_bg {
+  background: #cdcdcc;
+}
+
+.leading-icon,
+.party-trailing {
+  margin-bottom: 5px;
+}
+
+#party>p {
+  border-bottom: 1px solid #c2b9b9;
+  margin: 3px 0px;
+  padding: 4px 0px;
+}
+
+.borderBottom1 {
+  border-bottom: 1px solid #c2b9b9;
+  margin: 0px 0px;
+  padding: 6px 0px;
+}
+
+.borderBtm {
+  border-bottom: 1px solid #c2b9b9;
+  margin: 2px 7px;
+  padding: 9px 0px;
+}
+
+.borderBtm:nth-last-of-type(1) {
+  border-bottom: 0px solid #c2b9b9;
+}
+
+/* .borderBottom1:nth-last-of-type(1) {
+  border-bottom: 0px solid #c2b9b9;
+} */
+.customStateImg {
+  width: 50%;
+  margin: 0px 30px;
+}
+
+.customStateImg2 {
+  width: 50%;
+  margin: 10px 15px 0px;
+}
+
+.party-name p {
+  font-weight: 600;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.stateName {
+  font-weight: 600;
+}
+
+.customStateImg1 {
+  width: 100%;
+  margin: 0px 0px 10px;
+}
+
+#slideshow-container {
+  position: relative;
+}
+
+#slideshow-container1 {
+  position: relative;
+}
+
+.candidate-slide {
+  position: absolute;
+  padding-left: 0px;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+  /* border-bottom: 1px solid #ddd; */
+}
+
+.candidate-slide1 {
+  position: absolute;
+  padding-left: 0px;
+  top: 116px;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.stateName {
+  font-size: 12px;
+}
+
+.partyName {
+  font-size: 11px;
+  padding: 0px 0px;
+}
+
+
+.leadBg {
+  background-color: #878787;
+}
+
+.otherBg {
+  background: #2a7e88;
+  position: relative;
+  z-index: 9999;
+}
+
+.ndaBg {
+  background: #f38638;
+  position: relative;
+  z-index: 9999;
+}
+
+.indiaBg {
+  background: #405a9c;
+  position: relative;
+  z-index: 9999;
+}
+
+.progress,
+.progress-stacked {
+  height: 30px;
+  border-radius: 0px;
+  background-color: #878787;
+}
+
+.progressLabel {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.wonChanges p {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.borderBottomCanidate {
+  /* border: 1px solid #ddd; */
+  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+  height: 100%;
+  padding: 8px 10px 0px 19px;
+}
+
+.electionBorder {
+  border: 1px solid #ddd;
+  height: 100%;
+  background-color: #f3f3f3;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.15) -3.05px 2.95px 2.6px;
+}
+
+.formModify:focus {
+  border-color: transparent;
+  outline: 0;
+  box-shadow: none;
+}
+
+.custom_container {
+  max-width: 1320px;
+}
+
+.views h1 {
+  font-size: 11px;
+  text-transform: uppercase;
+  padding: 13px 8px;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.25);
+  font-weight: bold;
+  color: #984148;
+}
+
+.viewsImg {
+  margin: 0px -30px 0px -60px;
+}
+
+.assembly {
+
+  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+
+  padding: 0px 0px;
+  margin: 0px 0px 12px;
+
+}
+
+.assemblyColor {
+  border: 1px solid #ddd;
+  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+  height: 217px;
+  padding: 0px 0px;
+  background-color: #cdcecd;
+  padding: 25px 6px 0px 7px;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.leadStateImg img {
+  /* width: 50%; */
+}
+
+.leadState,
+.leadParty {
+  /* text-align: center; */
+  font-weight: bold;
+  font-size: 12px;
+
+}
+
+.slide {
+  display: none;
+}
+
+.slide.show {
+  display: block;
+}
+
+.borderBottomAssembly {
+  border-bottom: 1px solid #c2b9b9;
+  margin-bottom: 19px;
+  padding: 4px 0px;
+}
+
+.leadParty {
+  padding: 0px 0px 0px 3px;
+}
+
+.leadState {
+  padding: 3px 0px 0px 12px;
+}
+
+.ndaleadColor {
+  background-color: #f7a66c;
+  animation: ndaBackground 3s infinite;
+}
+
+.indialeadColor {
+  background-color: #8da3d9;
+  animation: indiaBackground 3s infinite;
+}
+
+.othersleadColor {
+  background-color: #9cd1d7;
+  animation: otherBackground 3s infinite;
+}
+
+.nullColor {
+  background-color: #ddd;
+}
+
+.wonChanges {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3px;
+}
+
+.progress-stacked>.leadProgress {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/* .progress.leadProgress{
+ direction: rtl;
+} */
+.progress-stacked {
+  display: flex;
+  flex-direction: row;
+}
+
+.progress {
+  position: relative;
+  height: 100%;
+  flex-grow: 1;
+  margin: 0 0px;
+}
+
+.progress-bar {
+  transition: width 0.6s ease;
+}
+
+.leadBg {
+  direction: rtl;
+
+}
+
+.statusText {
+  margin-bottom: 20px;
+}
+
+
+@keyframes ndaBackground {
+  0% {
+    background-color: #f7a66c;
+  }
+
+  25% {
+    background: #f38638;
+  }
+
+  50% {
+    background-color: #f7a66c;
+  }
+
+  75% {
+    background: #f38638;
+  }
+
+  100% {
+    background-color: #f7a66c;
+  }
+}
+
+@keyframes indiaBackground {
+  0% {
+    background-color: #8da3d9;
+  }
+
+  25% {
+    background: #405a9c;
+  }
+
+  50% {
+    background-color: #8da3d9;
+  }
+
+  75% {
+    background: #405a9c;
+  }
+
+  100% {
+    background-color: #8da3d9;
+  }
+}
+
+@keyframes otherBackground {
+  0% {
+    background-color: #9cd1d7;
+  }
+
+  25% {
+    background: #2a7e88;
+  }
+
+  50% {
+    background-color: #9cd1d7;
+  }
+
+  75% {
+    background: #2a7e88;
+  }
+
+  100% {
+    background-color: #9cd1d7;
+  }
+}
+
+/* .candidateText{
+    color: #520f0f;
+    background: #d7b763;
+    border-radius: 6px;
+    display: inline;
+    padding: 4px 6px;
+  } */
+/* .row.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.row.fade-out {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+} */
+/* .won {
+  display: none;
+} */
+/* 13.05.2024  start*/
+
+
+
+
+
+
+/* Jharkand & Maharastra */
+
+/* Assembly election Jammu and Kashmir 2024 */
+.header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
+
+.party {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: grey;
+  text-wrap: nowrap;
+}
+
+#partyTable,
+#haryana {
+  display: flex;
+
+}
+
+.borderTop {
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  height: 151px;
+  background-color: #f3f3f3;
+  box-shadow: rgba(0, 0, 0, 0.15) -3.05px 2.95px 2.6px;
+}
+
+.bgjammu-har {
+  background-color: #f3f3f3 !important;
+}
+
+.borderBottom {
+  border-bottom: transparent;
+  margin-bottom: 0px;
+}
+
+.paddingBorder {
+  padding: 0px;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+}
+
+.borderRight {
+  border-right: 1px solid #ddd;
+}
+
+.header {
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+.party {
+  display: flex;
+  align-items: center;
+}
+
+.roundColor {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* Start Color */
+.AAP .roundColor {
+  background-color: #41a9e5;
+}
+ 
+.AAP .partyCountColor {
+  color: #41a9e5;
+}
+.BJP .roundColor {
+  background-color: orange;
+}
+ 
+.BJP .partyCountColor {
+  color: orange;
+}
+ 
+.SHS .roundColor {
+  background-color: #FF7722;
+}
+ 
+.SHS .partyCountColor {
+  color: #FF7722;
+}
+.SHS-\(UBT\) .roundColor {
+  background-color: #FF7722;
+}
+ 
+.SHS-\(UBT\) .partyCountColor {
+  color: #FF7722;
+}
+ 
+.INC .roundColor {
+  background-color: green;
+}
+ 
+.INC .partyCountColor {
+  color: green;
+}
+ 
+.NCP .roundColor {
+  background-color: #0080FF;
+}
+ 
+.NCP .partyCountColor {
+  color: #0080FF;
+}
+.NCP-\(SP\) .roundColor {
+  background-color: #0080FF;
+}
+ 
+.NCP-\(SP\) .partyCountColor {
+  color: #0080FF;
+}
+ 
+.JMM .roundColor {
+  background-color: #337316;
+}
+ 
+.JMM .partyCountColor {
+  color: #337316;
+}
+ 
+.AJSU .roundColor {
+  background-color: #DA251C;
+}
+ 
+.AJSU .partyCountColor {
+  color: #DA251C;
+}
+ 
+
+.Others .roundColor {
+  background-color: grey;
+}
+
+.Others .partyCountColor {
+  color: grey;
+}
+
+.Others .borderRight {
+  border-right: transparent;
+}
+
+.Others {
+  border-right: transparent !important;
+}
+
+.leading {
+  font-weight: bold;
+  color: grey;
+  text-align: center;
+}
+
+/* Start Color */
+
+
+.partyCountAlign {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.candidateImg {
+  position: absolute;
+  bottom: -99px;
+  left:-7px;
+}
+
+.candidateImg img {
+	border-radius: 0px 10px 0px;	
+  }
+
+.large-img {
+  width: 50%;
+
+}
+
+.small-img {
+  width: 90%;
+  margin: 10px 0px 0px;
+}
+
+.table > :not(caption) > * > *{
+	padding: 0.5rem 0.1rem; 
+}
+
+/* Delhi Election */
+
+.loader {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: auto;
+  display: none;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* 16-10-2025 */
+
+.imgWidth{
+  width: 30px;
+  height: 45px;
+  border-radius: 50%;
+    animation: gifAnimation 5s;
+  /* margin-right: 8px; */
+  position: relative;
+  
+}
+@keyframes gifAnimation {
+     from {left: 0%; }
+      
+}
+.logoImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    width:45px;
+    height: 45px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 52%;
+    padding: 6px 3px;
+}
+
+.logoImg img{
+   width: 22px;
+   height: auto;
+   /* border-radius: 50%; */
+}
+.logoPos{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logoPos p{
+  margin-top: 5px;
+  font-weight : 600;
+  font-size: 12px;
+}
+.progress-bar{
+       transition: width 2s ease-in-out;
+}
+.progress{
+      border-radius: 0px 10px 10px 0px;
+      height: 8px;
+    
+}
+
+.progress, .progress-stacked{
+  background-color: #efefef;
+}
+
+.progress-bar.progress-bar-striped.progress-bar-animated {
+     animation: progressAnimationStrike 5s;
+}
+
+@keyframes progressAnimationStrike {
+     from { width: 0 }
+}
+
+#progressTable{
+box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+
+
+.table-header-bg{
+ --bs-table-bg: #d71920 !important;
+ --bs-table-color: #fff !important;
+}
+#totalTable{
+  margin: 10px 0px;
+}
+
+#totalTable tbody, td, tfoot, th, thead, tr{
+  padding: 5px 10px !important;
+}
+
+
+    .candidate_grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .card {
+      background: white;
+      padding: 10px 10px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .owl-nav button {
+      position: absolute;
+      top: 40%;
+      background: #fff !important;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .owl-nav .owl-prev {
+      left: -17px;
+    }
+
+    .owl-nav .owl-next {
+      right: -17px;
+    }
+
+.candidate_details h4{
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 15px;
+}
+.candidate_details p{
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0px 0px 15px;
+}
+.candidate_image{
+      display: flex;
+    justify-content: center;
+}
+.candidate_image img{
+  width: 100px !important;
+  height: 100px;
+}
+.candidate_details  {
+       display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Base styling for all status icons */
+.candidate_details img[class*="status-"] {
+  display: inline-block;
+  height: auto;
+}
+
+/* Specific sizes */
+.status-leading,
+.status-trailing {
+  width: 110px !important;
+}
+
+.status-won,
+.status-lost {
+  width: 50px !important;
+}
+
+.partyTrends {
+  width:100%;
+  background: #f2f2f2;
+  border-collapse: collapse;
+  border-radius: 6px;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.partyTrends td {
+    padding: 5px 10px !important;
+    font-size: 14px;
+    color: #333;
+    height: 73px;
+}
+
+.partyTrends tr:not(:last-child) td {
+  border-bottom: 1px solid #ddd;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.count {
+  text-align: center;
+  font-weight: 600;
+  color: #222;
+}
+
+.title h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0px 0px 10px;
+    text-align: center;
+}
+
+.main_title h2{
+  color: #980000;
+    font-size: 36px;
+    font-weight: 700;
+    margin: 20px 0px 20px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***** Responsive CSS START *****/
+@media only screen and (min-width: 1920px) {}
+
+@media only screen and (width: 1920px) {}
+
+@media only screen and (min-width: 1600px) and (max-width: 1919px) {}
+
+@media only screen and (min-width: 1400px) and (max-width: 1599px) {}
+
+@media only screen and (min-width: 1025px) and (max-width: 1300px) {}
+
+@media only screen and (device-width: 1024px) {
+
+
+  .total {
+    margin-bottom: 14px;
+  }
+
+  .candidateImg img {
+    width: 90%;
+	
+  }
+
+  .customStateImg2 {
+    width: 86%;
+        margin: 10px -4px 34px;
+  }
+
+  .customStateImg1 {
+    width: 40%;
+    margin: 0px 0px 10px;
+  }
+
+  .assemblyColor {
+    height: 299px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .candidateName {
+    left: 0%;
+  }
+
+  .wonPos {
+    position: absolute;
+    bottom: -133px;
+  }
+
+  .candidateImg {
+    position: absolute;
+    bottom: -142px;
+	left:-11px;
+  }
+
+  .mb_400 {
+    margin-bottom: 20px;
+  }
+
+  .borderBottomCanidate {
+    height: 150px;
+    padding: 8px 23px;
+  }
+
+  .borderCandidate {
+    border: 1px solid #cdcdcc;
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+    padding: 28px 18px;
+  }
+
+  .borderBottomAssembly {
+    border-bottom: 1px solid #c2b9b9;
+    margin-bottom: 1px;
+    padding: 4px 0px;
+  }
+
+  .viewsImg {
+    margin: 0px 0px 0px -82px;
+  }
+
+  .views h1 {
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 13px 0px;
+
+  }
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1350px) {}
+
+@media only screen and (min-width: 993px) {}
+
+@media only screen and (max-width: 992px) {}
+
+@media only screen and (min-width: 812px) and (max-width: 992px) {}
+
+@media screen and (min-width: 769px) and (max-width: 1200px) {}
+
+@media screen and (min-width: 769px) and (max-width: 1188px) {}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {}
+
+@media only screen and (min-width: 667px) and (max-width: 768px) {}
+
+@media only screen and (min-width: 640px) and (max-width: 768px) {}
+
+@media only screen and (max-width: 768px) {
+
+
+  .wonPos {
+    position: absolute;
+    bottom: -79px;
+}
+.borderBottomCanidate {
+  height: 100px;
+  padding: 8px 23px;
+}
+.candidateImg {
+  position: absolute;
+  bottom: -92px;
+  left: -11px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .small-img {
+    width: 51%;
+    margin: 10px 0px 0px;
+}
+  .total {
+    margin-bottom: 12px;
+  }
+
+	.electionTitle h1 {
+	  font-size: 15px;
+	}
+
+	.candidateName h5 {
+		font-size: 14px;
+	}
+	.candidateName p
+	{
+		font-size: 14px;
+	}
+
+  .customStateImg1 {
+    width: 62%;
+    margin: 0px 15px 2px;
+  }
+
+  .assembly {
+    height: 228px;
+  }
+
+  .borderBottomAssembly {
+    border-bottom: 1px solid #c2b9b9;
+    margin-bottom: 3px;
+  }
+
+  .viewsImg {
+    margin: 0px 0px 0px -82px;
+  }
+
+  .views h1 {
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 13px 0px;
+
+  }
+
+  .total {
+    margin-bottom: 24px;
+  }
+
+  .borderCandidate {
+    border: 1px solid #cdcdcc;
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+    padding: 22px 18px;
+  }
+
+  .customStateImg1 {
+    width: 62%;
+    margin: 0px 15px 2px;
+  }
+
+  .assemblyColor {
+    height: 244px;
+  }
+}
+
+@media only screen and (min-width: 768px) {}
+
+@media only screen and (min-width: 767px) {}
+
+@media only screen and (max-width: 767px) {}
+
+@media only screen and (max-width: 750px) {}
+
+@media only screen and (min-width: 731px) and (max-width: 736px) {}
+
+@media only screen and (max-width: 700px) {}
+
+@media only screen and (device-width: 640px) {}
+
+@media only screen and (max-width: 640px) {}
+
+@media only screen and (min-width: 480px) and (max-width: 667px) {}
+
+@media only screen and (max-width: 667px) {}
+
+@media (min-width: 576px) {}
+
+@media only screen and (max-width: 575px) {}
+
+@media only screen and (min-width: 480px) {}
+
+@media only screen and (max-width: 480px) {
+ 
+    .candidate_grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+    .owl-nav .owl-next {
+    right: -8px;
+}
+.owl-nav .owl-prev {
+    left: -5px;
+}
+}
+
+@media screen and (min-width: 471px) and (max-width: 767px) {}
+
+@media screen and (min-width: 450px) and (max-width: 768px) {}
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {}
+
+@media only screen and (max-width: 414px) {
+
+
+  /* .borderBottomCanidate {
+    height: 263px;
+  } */
+}
+
+@media only screen and (min-width: 411px) and (max-width: 414px) {}
+
+@media only screen and (min-width: 540px) and (max-width: 540px) {}
+
+@media only screen and (min-width: 393px) and (max-width: 393px) {}
+
+@media only screen and (min-width: 376px) and (max-width: 480px) {}
+
+@media screen and (min-width: 376px) and (max-width: 470px) {}
+
+@media only screen and (min-width: 375px) and (max-width: 400px) {}
+
+@media only screen and (min-width: 375px) and (max-width: 390px) {}
+
+@media only screen and (max-width: 390px) {}
+
+@media only screen and (max-width: 375px) {}
+
+@media only screen and (max-width: 360px) {}
+
+@media only screen and (max-width: 320px) {}
+
+@media only screen and (max-width: 290px) {}
+
+/***** Responsive CSS END *****/
+/***** Responsive CSS END *****/
+/* Responsive Section */
