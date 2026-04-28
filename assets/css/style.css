@@ -1491,8 +1491,8 @@ a:hover {
 /* 16-10-2025 */
 
 .imgWidth{
-  width: 30px;
-  height: 45px;
+  width: 45px;
+  height: 60px;
   border-radius: 50%;
     animation: gifAnimation 5s;
   /* margin-right: 8px; */
@@ -1551,12 +1551,17 @@ a:hover {
      from { width: 0 }
 }
 
-#progressTable{
+.progess_box{
 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    padding: 10px 20px;
+    padding: 10px 20px 20px;
     border-radius: 20px;
 }
-
+.target_count h3{
+  font-size: 14px;
+  font-weight: 400;
+  color: #222;
+  text-align: center;
+}
 
 
 .table-header-bg{
@@ -1565,13 +1570,20 @@ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 #totalTable{
   margin: 10px 0px;
+  display: none;
 }
 
 #totalTable tbody, td, tfoot, th, thead, tr{
   padding: 5px 10px !important;
 }
 
-
+.running-gif {
+    position: absolute;
+    bottom: 10px;
+    left: 0%;
+    transition: left 0.05s linear;
+}
+.progress { position: relative; overflow: visible; }
     .candidate_grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1583,7 +1595,10 @@ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       padding: 10px 10px;
       border-radius: 10px;
       text-align: center;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); */
+      height: 258px;
+      justify-content: center;
+      margin: 2px;
     }
 
     .owl-nav button {
@@ -1658,7 +1673,11 @@ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 5px 10px !important;
     font-size: 14px;
     color: #333;
-    height: 73px;
+    height: 37px;
+}
+.candidate_carousel{
+  margin: -1px;
+  padding: 0px;
 }
 
 .partyTrends tr:not(:last-child) td {
@@ -1696,16 +1715,148 @@ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 
 
+.target-line {
+    position: absolute;
+    top: -52px;
+    bottom: 0;
+    width: 2px;
+    border-right: 0.5px dotted #000;
+    z-index: 10;
+    transform: translateX(-50%);
+    height: 73px;
+}
+/* .target-line::after {
+    content: '';
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+} */
+
+.totalCount {
+    display: flex;
+    justify-content: space-between;
+    margin: 2px 0px;
+}
 
 
+.totalCount h4{
+  font-size: 18px;
+}
 
 
+.election-tabs{
+padding: 5px 0px;
+display:flex;
+gap:10px;
+flex-wrap: nowrap;
+white-space: nowrap;
+ overflow-x: auto;
+  overflow-y: hidden;
+    scroll-behavior: smooth;
+
+}
+/* Hide scrollbar */
+.election-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.election-tabs {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.election-tabs .nav-link {
+    border: none;
+    font-weight: 500;
+    font-size: 14px;
+color:white;
+    padding: 9px 20px 3px;
+    background: #dc9f26;
+    border-radius: 6px 6px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: 0.3s;
+    width: max-content;
+    line-height: 16px;
+}
+
+.election-tabs .nav-link{
+    position: relative;   
+}
+
+.election-tabs .nav-link::after{
+    content:"";
+    position:absolute;
+    bottom:-3px;
+    left:0;
+    width:100%;
+    height:3px;
+    background:#d70000;
+}
 
 
+.election-tabs .nav-link i{
+color:#d70000;
+}
 
+.election-tabs .nav-link:hover{
+opacity: 0.8;
 
+}
 
+.election-tabs .nav-link.active{
+background:#520f0f;
+color:white;
+position:relative;
+}
 
+.election-tabs .nav-link.active i{
+color:white;
+}
+
+.election-tabs .nav-link.active::after{
+content:"";
+position:absolute;
+bottom:-3px;
+left:0;
+width:100%;
+height:3px;
+background:#d70000;
+}
+
+.election-btn a{
+ 
+  
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.election-btn a{
+  color: #980000;
+  font-weight: 600;
+  font-size: 15px;
+}
+.election-btn a:hover{
+  opacity: 0.8;
+}
+.tab_flex {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+      border-bottom: 1px solid #e5e5e5;
+}
 /***** Responsive CSS START *****/
 @media only screen and (min-width: 1920px) {}
 
@@ -1813,7 +1964,9 @@ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 @media only screen and (max-width: 768px) {
 
-
+.owl-nav button {
+  left: 96%;
+}
   .wonPos {
     position: absolute;
     bottom: -79px;
@@ -1941,7 +2094,7 @@ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       gap: 15px;
     }
     .owl-nav .owl-next {
-    right: -8px;
+    left: 93%;
 }
 .owl-nav .owl-prev {
     left: -5px;

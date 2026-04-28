@@ -2,10 +2,7 @@ $(document).ready(function () {
 
 
  var loader= document.querySelectorAll('.loader');
-   
-  //  Candidate
-// Fetching candidate data
-  // First fetch for the first slider
+
 
   $(".loader").show();
   function firstSlider() {
@@ -14,14 +11,13 @@ $(document).ready(function () {
   .then((data) => {
     $(".loader").hide();
     const candidates = data.content.lokShabha;
-    initSlideshow("slideshow-container", candidates); // Initialize first slider
+    initSlideshow("slideshow-container", candidates); 
   })
   .catch((error) => {
     $("#loader").show();
     console.error("Error fetching candidate data:", error);
   });
 
-// Function to initialize the slideshow for each container
 function initSlideshow(containerId, candidates) {
   const slideshowContainer = document.getElementById(containerId);
 
@@ -68,33 +64,31 @@ function initSlideshow(containerId, candidates) {
   setTimeout(() => startSlideshow(containerId), 1000);
 }
 
-// Function to start the slideshow
+
 function startSlideshow(containerId) {
   const slides = document.querySelectorAll(`#${containerId} .candidate-slide`);
   let currentIndex = 0;
 
-  if (slides.length === 0) return; // Ensure there are slides to loop through
+  if (slides.length === 0) return; 
 
   const changeSlide = () => {
     slides.forEach((slide, index) => {
-      slide.style.opacity = index === currentIndex ? 1 : 0; // Show only the current slide
+      slide.style.opacity = index === currentIndex ? 1 : 0; 
     });
   };
 
-  // Initially, show the first slide
+
   changeSlide();
 
-  // After 1 second, show the next slide and start 3-second intervals
   setTimeout(() => {
     currentIndex = (currentIndex + 1) % slides.length;
     changeSlide();
 
-    // Start interval for 3-second changes
     setInterval(() => {
       currentIndex = (currentIndex + 1) % slides.length;
       changeSlide();
-    }, 3000); // 3 seconds
-  }, 1000); // 1 second
+    }, 3000); 
+  }, 1000);
 }
 
   }
@@ -104,7 +98,7 @@ function startSlideshow(containerId) {
 
 
   function secondSlider() {
-    // Second fetch for the second slider
+
   fetch(
     "https://script.google.com/macros/s/AKfycbzyymCpmP6Dksjt4GPQ5a7ALmA320xek3PtoDu79tbGSwz91Efu_QIliNRT2hmBda4/exec"
   )
@@ -113,7 +107,7 @@ function startSlideshow(containerId) {
       console.log(data)
       $(".loader").hide();
       const candidates = data.content.lokShabha;
-      initSlideshowOne("slideshow-container1", candidates); // Initialize second slider
+      initSlideshowOne("slideshow-container1", candidates);
     })
     .catch((error) => {
       console.error("Error fetching candidate data:", error);
@@ -299,7 +293,7 @@ function fetchData() {
   fetchData();
 
 
- setInterval(fetchData, 3000);
+ setInterval(fetchData, 5000);
 
 
 
