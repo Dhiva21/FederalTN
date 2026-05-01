@@ -2,11 +2,11 @@ $(function() {
     const baseUrl = "https://script.google.com/macros/s/AKfycbzZflaqZHHyn6xx_hTJsOqU1e7ubnKQxOScjt7XoJyXeEdsuDqHaArRMyuJ-OUWD6OIFA/exec";
 
     const states = [
-        { id: 'tn', name: 'Tamil Nadu', sheet: 'tn_candidate_list', imgSheet: 'tn_img', trendSheet: 'tn_party_trends', totalSeats: 234, targetSeats: 117 },
-        { id: 'wb', name: 'West Bengal', sheet: 'wb_candidate_list', imgSheet: 'wb_img', trendSheet: 'wb_party_trends', totalSeats: 294, targetSeats: 147 },
-        { id: 'as', name: 'Assam', sheet: 'assam_candidate_list', imgSheet: 'assam_img', trendSheet: 'assam_party_trends', totalSeats: 126, targetSeats: 63 },
-        { id: 'ke', name: 'Kerala', sheet: 'kerala_candidate_list', imgSheet: 'kerala_img', trendSheet: 'kerala_party_trends', totalSeats: 140, targetSeats: 70 },
-        { id: 'po', name: 'Pondicherry', sheet: 'pondicherry_candidate_list', imgSheet: 'pondicherry_img', trendSheet: 'pondicherry_party_trends', totalSeats: 30, targetSeats: 15 }
+        { id: 'tn', name: 'Tamil Nadu', sheet: 'tn_candidate_list',imgFolder: 'tn-candidates', imgSheet: 'tn_img', trendSheet: 'tn_party_trends', totalSeats: 234, targetSeats: 117 },
+        { id: 'wb', name: 'West Bengal', sheet: 'wb_candidate_list',imgFolder: 'wb-candidates', imgSheet: 'wb_img', trendSheet: 'wb_party_trends', totalSeats: 294, targetSeats: 147 },
+        { id: 'as', name: 'Assam', sheet: 'assam_candidate_list',imgFolder: 'as-candidates', imgSheet: 'assam_img', trendSheet: 'assam_party_trends', totalSeats: 126, targetSeats: 63 },
+        { id: 'ke', name: 'Kerala', sheet: 'kerala_candidate_list',imgFolder: 'kl-candidates', imgSheet: 'kerala_img', trendSheet: 'kerala_party_trends', totalSeats: 140, targetSeats: 70 },
+        { id: 'po', name: 'Pondicherry', sheet: 'pondicherry_candidate_list',imgFolder: 'po-candidates', imgSheet: 'pondicherry_img', trendSheet: 'pondicherry_party_trends', totalSeats: 30, targetSeats: 15 }
     ];
 
     // Global array to store intervals of the currently active tab
@@ -31,7 +31,7 @@ $(function() {
         tabPane.find('.target_count h3').text(`Target - ${state.targetSeats}`);
 
         setProgressData(candidates, state.totalSeats, state.targetSeats, tabPane);
-        setCandidateData(images, tabPane);
+        setCandidateData(images, tabPane,state);
         setPartyTable(trends, tabPane);
     }
 
@@ -159,52 +159,56 @@ $(function() {
         });
     }
 
-    function setCandidateData(data, tabPane) {
-        const html = data.map(item => {
-            const status = item.Status ? item.Status.toLowerCase() : '';
-            let statusImage = '';
-            if (status === 'leading') statusImage = 'leading.png';
-            else if (status === 'trailing') statusImage = 'trailing.png';
-            else if (status === 'won') statusImage = 'won.png';
-            else if (status === 'lost') statusImage = 'lost.png';
+    function setCandidateData(data, tabPane, state) {
+    const html = data.map(item => {
+        const status = item.Status ? item.Status.toLowerCase() : '';
+        let statusImage = '';
 
-            const imageName = item.Image ? item.Image.trim() : 'default';
+        if (status === 'leading') statusImage = 'leading.png';
+        else if (status === 'trailing') statusImage = 'trailing.png';
+        else if (status === 'won') statusImage = 'won.png';
+        else if (status === 'lost') statusImage = 'lost.png';
 
-            return `
-                <div class="card">
-                    <div class="candidate_image">
-                        <img src="assets/images/bihar_candidate/${imageName}.png" class="img-fluid" alt="${item.CandidateName}">
-                    </div>
-                    <div class="candidate_details">
-                        <h4>${item.CandidateName}</h4>
-                        <p>${item.Party} - ${item.Constituency}</p>
-                        ${statusImage ? `<img src="assets/images/${statusImage}" class="img-fluid status-${status}" alt="${item.Status}">` : ''}
-                    </div>
+        const imageName = item.Image ? item.Image.trim() : 'default';
+
+        return `
+            <div class="card">
+                <div class="candidate_image">
+                    <img src="assets/images/${state.imgFolder}/${item.Image}.png"
+                         class="img-fluid"
+                         onerror="this.src='assets/images/default.png'">
                 </div>
-            `;
-        }).join('');
+                <div class="candidate_details">
+                    <h4>${item.CandidateName}</h4>
+                    <p>${item.Party} - ${item.Constituency || ''}</p>
+                    ${statusImage ? `<img src="assets/images/${statusImage}" class="img-fluid status-${status}">` : ''}
+                </div>
+            </div>
+        `;
+    }).join('');
 
-        const carouselContainer = tabPane.find('.candidate_carousel');
-        carouselContainer.html(html);
+    const carouselContainer = tabPane.find('.candidate_carousel');
+    carouselContainer.html(html);
 
-        if (carouselContainer.data('owl.carousel')) {
-            carouselContainer.trigger('destroy.owl.carousel');
-        }
-        carouselContainer.owlCarousel({
-            loop: true,
-            margin: 20,
-            nav: true,
-            dots: false,
-            autoplay: true,
-            autoplayTimeout: 3000,
-            autoplayHoverPause: true,
-            responsive: {
-                0: { items: 2 },
-                600: { items: 1 },
-                1000: { items: 3 }
-            }
-        });
+    if (carouselContainer.data('owl.carousel')) {
+        carouselContainer.trigger('destroy.owl.carousel');
     }
+
+    carouselContainer.owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: true,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
+        responsive: {
+            0: { items: 2 },
+            600: { items: 1 },
+            1000: { items: 3 }
+        }
+    });
+}
 
     const partyColors = {
         BJP: '#ff6600',
