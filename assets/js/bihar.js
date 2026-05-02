@@ -134,10 +134,14 @@ function setProgressData(data, name, totalSeats, targetSeats, tabPane) {
 
     data.forEach((item, index) => {
 
-        const baseName = item.Party.toLowerCase()
-            .replace(/\s+/g, '-')
-            .replace(/[^a-z0-9\-]/g, '');
-
+        // const baseName = item.Party.toLowerCase()
+        //     .replace(/\s+/g, '-')
+        //     .replace(/[^a-z0-9\-]/g, '');
+        const baseName = item.Party
+    .toUpperCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^A-Z0-9\-]/g, '');
+       
         const partyLogo = `${baseName}.png`;
 
         // ✅ NEW COLOR LOGIC (GLOBAL MAP)
