@@ -1516,7 +1516,7 @@ a:hover {
 }
 
 .logoImg img{
-   width: 22px;
+   width: 29px;
    height: auto;
    /* border-radius: 50%; */
 }
@@ -1555,6 +1555,7 @@ a:hover {
 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 10px 20px 20px;
     border-radius: 20px;
+    height: 100%;
 }
 .target_count h3{
   font-size: 14px;
@@ -1668,12 +1669,20 @@ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   overflow: hidden;
   font-family: Arial, sans-serif;
 }
+#partyTrends {
+    height: 260px; 
+}
+
+#partyTrends tr {
+    height: calc(100% / var(--rows));
+}
+
 
 .partyTrends td {
     padding: 5px 10px !important;
     font-size: 14px;
     color: #333;
-    height: 37px;
+   
 }
 .candidate_carousel{
   margin: -1px;
@@ -1857,6 +1866,37 @@ background:#d70000;
   align-items: center;
       border-bottom: 1px solid #e5e5e5;
 }
+.skeleton {
+    background: linear-gradient(90deg, #eee 25%, #ddd 37%, #eee 63%);
+    background-size: 400% 100%;
+    animation: shimmer 1.2s infinite;
+    border-radius: 4px;
+}
+
+@keyframes shimmer {
+    0% { background-position: 100% 0; }
+    100% { background-position: -100% 0; }
+}
+
+.skeleton-logo {
+    width: 40px;
+    height: 40px;
+}
+
+.skeleton-bar {
+    width: 100%;
+    height: 20px;
+}
+
+.skeleton-text {
+    width: 100%;
+    height: 14px;
+}
+
+.skeleton-img {
+    width: 100%;
+    height: 120px;
+}
 /***** Responsive CSS START *****/
 @media only screen and (min-width: 1920px) {}
 
@@ -1963,6 +2003,11 @@ background:#d70000;
 @media only screen and (min-width: 640px) and (max-width: 768px) {}
 
 @media only screen and (max-width: 768px) {
+  .main_title h2 {
+  
+    font-size: 24px;
+  
+}
 
 .owl-nav button {
   left: 96%;

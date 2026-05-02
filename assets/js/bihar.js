@@ -2,14 +2,73 @@ $(function() {
     const baseUrl = "https://script.google.com/macros/s/AKfycbzZflaqZHHyn6xx_hTJsOqU1e7ubnKQxOScjt7XoJyXeEdsuDqHaArRMyuJ-OUWD6OIFA/exec";
 
     const states = [
-        { id: 'tn', name: 'Tamil Nadu', sheet: 'tn_candidate_list',imgFolder: 'tn-candidates', imgSheet: 'tn_img', trendSheet: 'tn_party_trends', totalSeats: 234, targetSeats: 117 },
-        { id: 'wb', name: 'West Bengal', sheet: 'wb_candidate_list',imgFolder: 'wb-candidates', imgSheet: 'wb_img', trendSheet: 'wb_party_trends', totalSeats: 294, targetSeats: 147 },
+        { id: 'tn', name: 'Tamil Nadu', sheet: 'tn_candidate_list',imgFolder: 'tn-candidates', imgSheet: 'tn_img', trendSheet: 'tn_party_trends', totalSeats: 234, targetSeats: 118 },
+        { id: 'wb', name: 'West Bengal', sheet: 'wb_candidate_list',imgFolder: 'wb-candidates', imgSheet: 'wb_img', trendSheet: 'wb_party_trends', totalSeats: 294, targetSeats: 148 },
         { id: 'as', name: 'Assam', sheet: 'assam_candidate_list',imgFolder: 'as-candidates', imgSheet: 'assam_img', trendSheet: 'assam_party_trends', totalSeats: 126, targetSeats: 63 },
-        { id: 'ke', name: 'Kerala', sheet: 'kerala_candidate_list',imgFolder: 'kl-candidates', imgSheet: 'kerala_img', trendSheet: 'kerala_party_trends', totalSeats: 140, targetSeats: 70 },
-        { id: 'po', name: 'Pondicherry', sheet: 'pondicherry_candidate_list',imgFolder: 'po-candidates', imgSheet: 'pondicherry_img', trendSheet: 'pondicherry_party_trends', totalSeats: 30, targetSeats: 15 }
+        { id: 'ke', name: 'Kerala', sheet: 'kerala_candidate_list',imgFolder: 'kl-candidates', imgSheet: 'kerala_img', trendSheet: 'kerala_party_trends', totalSeats: 140, targetSeats: 71 },
+        { id: 'po', name: 'Pondicherry', sheet: 'pondicherry_candidate_list',imgFolder: 'po-candidates', imgSheet: 'pondicherry_img', trendSheet: 'pondicherry_party_trends', totalSeats: 30, targetSeats: 16 }
     ];
+let isInitialLoad = true;
+    function showSkeleton(tabPane) {
+      
+    let skeletonHtml = '';
+
+    for (let i = 0; i < 4; i++) {
+        skeletonHtml += `
+        <div class="row align-items-end mb-2 skeleton-row">
+            <div class="col-2">
+                <div class="skeleton skeleton-logo"></div>
+            </div>
+            <div class="col-8">
+                <div class="skeleton skeleton-bar"></div>
+            </div>
+            <div class="col-2">
+                <div class="skeleton skeleton-text"></div>
+            </div>
+        </div>
+        `;
+    }
+
+    tabPane.find('#progressTable').html(skeletonHtml);
+const carouselContainer = tabPane.find('.candidate_carousel');
+     if (carouselContainer.hasClass('owl-loaded')) {
+        carouselContainer.trigger('destroy.owl.carousel');
+        carouselContainer.removeClass('owl-loaded');
+        carouselContainer.find('.owl-stage-outer').children().unwrap();
+    }
+
+
+    // Carousel skeleton
+    let cardSkeleton = '';
+    for (let i = 0; i < 3; i++) {
+        cardSkeleton += `
+        <div class="card">
+            <div class="skeleton skeleton-img"></div>
+            <div class="skeleton skeleton-text mt-2"></div>
+        </div>`;
+    }
+    tabPane.find('.candidate_carousel').html(cardSkeleton);
+
+    // Party table skeleton
+    let tableSkeleton = '<tbody>';
+    for (let i = 0; i < 4; i++) {
+        tableSkeleton += `
+        <tr>
+            <td><div class="skeleton skeleton-text"></div></td>
+            <td><div class="skeleton skeleton-text"></div></td>
+        </tr>`;
+    }
+    tableSkeleton += '</tbody>';
+
+    tabPane.find('#partyTrends').html(tableSkeleton);
+}
 
     // Global array to store intervals of the currently active tab
+  
+  
+  
+  
+  
     let activeIntervals = [];
 
     const fetchSheet = (sheetName) => fetch(`${baseUrl}?sheetName=${sheetName}`)
@@ -20,6 +79,11 @@ $(function() {
         });
 
     async function loadStateData(state, tabPane) {
+            if (isInitialLoad) {
+    showSkeleton(tabPane);
+    isInitialLoad = false;
+      await new Promise(requestAnimationFrame);
+}
         console.log(`Loading data for ${state.name}...`);
         const [candidates, images, trends] = await Promise.all([
             fetchSheet(state.sheet),
@@ -30,135 +94,157 @@ $(function() {
         tabPane.find('.totalCount h4').text(`Total Count - ${state.totalSeats}`);
         tabPane.find('.target_count h3').text(`Target - ${state.targetSeats}`);
 
-        setProgressData(candidates, state.totalSeats, state.targetSeats, tabPane);
+        setProgressData(candidates,state.name, state.totalSeats, state.targetSeats, tabPane);
         setCandidateData(images, tabPane,state);
         setPartyTable(trends, tabPane);
     }
 
-    function setProgressData(data, totalSeats, targetSeats, tabPane) {
-        // Clear all previous intervals to stop extra animations
-        activeIntervals.forEach(clearInterval);
-        activeIntervals = [];
 
-        let html = '';
-        const maxCount = totalSeats;
-        const targetPercent = (targetSeats / totalSeats) * 100;
+    const partyColors = {
+    "DMK+": "#cf4444df",
+    "AIADMK+": "#00a651",
+    "TVK": "#4d0c0c",
 
-        data.forEach((item, index) => {
-            const baseName = item.Party.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9\-]/g, '');
-            const partyLogo = `${baseName}.png`;
-            let color;
-            switch (item.Party.toUpperCase()) {
-                case 'NDA+':
-                    color = '#f7941c';
-                    break;
-                case 'MGB+':
-                case 'JDU':
-                    color = '#1e7b1e';
-                    break;
-                default:
-                    color = '#999999';
-            }
+    "LDF": "#e60000",
+    "UDF": "#0F823F",
+    "NDA": "#ff6600",
 
-            const candidateName = item.Name ? item.Name.replace(/\s+/g, '-') : 'unknown';
-            const initialGIF = item.Status === "Run" ? "Run" : "Walk";
+    "AITC": "#1aa3ff",
+    "BJP": "#ff6600",
+    "INC": "#0F823F",
 
-            html += `
-                <div class="row align-items-end mb-1" id="candidate-${index}">
-                    <div class="col-2">
-                        <div class="logoPos">
-                            <div class="logoImg">
-                                <img src="assets/images/party_logo/${partyLogo}" class="img-fluid" alt="${item.Party}">
-                            </div>
-                            <p>${item.Party}</p>
+    "BJP+": "#ff6600",
+    "INC+": "#0F823F",
+    "NDA+": "#ff6600",
+
+    "Others": "#999999"
+};
+
+function setProgressData(data, name, totalSeats, targetSeats, tabPane) {
+
+    var stateName = name;
+
+    // Clear intervals
+    activeIntervals.forEach(clearInterval);
+    activeIntervals = [];
+
+    let html = '';
+    const maxCount = totalSeats;
+    const targetPercent = (targetSeats / totalSeats) * 100;
+
+    data.forEach((item, index) => {
+
+        const baseName = item.Party.toLowerCase()
+            .replace(/\s+/g, '-')
+            .replace(/[^a-z0-9\-]/g, '');
+
+        const partyLogo = `${baseName}.png`;
+
+        // ✅ NEW COLOR LOGIC (GLOBAL MAP)
+        const partyKey = item.Party ? item.Party.trim() : "Others";
+        let color = partyColors[partyKey] || partyColors["Others"];
+
+        const candidateName = item.Name
+            ? item.Name.replace(/\s+/g, '-')
+            : 'unknown';
+
+        html += `
+            <div class="row align-items-end mb-1" id="candidate-${index}">
+                <div class="col-2">
+                    <div class="logoPos">
+                        <div class="logoImg">
+                            <img src="assets/images/party_logo/${partyLogo}" class="img-fluid" alt="${item.Party}">
                         </div>
-                    </div>
-                    <div class="col-8 position-relative">
-                        <div class="target-line" style="left: ${targetPercent}%;"> </div>
-                        <img id="runner-${index}" 
-                             src="assets/images/${candidateName}-${initialGIF}.gif" 
-                             class="img-fluid imgWidth running-gif"
-                             style="left: 0%;" 
-                             alt="${item.Name}">
-                        <div class="progress">
-                            <div id="bar-${index}" 
-                                 class="progress-bar progress-bar-striped progress-bar-animated" 
-                                 style="width: 0%; background-color: ${color};"></div>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <p id="count-${index}">0</p>
+                        <p>${item.Party}</p>
                     </div>
                 </div>
-            `;
-        });
+                <div class="col-8 position-relative">
+                    <div class="target-line" style="left: ${targetPercent}%;"> </div>
 
-        const progressContainer = tabPane.find('#progressTable');
-        progressContainer.html(html);
+                    <img id="runner-${index}" 
+                         src="assets/images/reaction/${stateName}/${candidateName}-Run.gif" 
+                         class="img-fluid imgWidth running-gif"
+                         style="left: 0%;" 
+                         alt="${item.Name}">
 
-        data.forEach((item, index) => {
-            const progressBar = progressContainer.find(`#bar-${index}`)[0];
-            const runnerImg = progressContainer.find(`#runner-${index}`)[0];
-            const countDisplay = progressContainer.find(`#count-${index}`)[0];
+                    <div class="progress">
+                        <div id="bar-${index}" 
+                             class="progress-bar progress-bar-striped progress-bar-animated" 
+                             style="width: 0%; background-color: ${color};">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <p id="count-${index}">0</p>
+                </div>
+            </div>
+        `;
+    });
 
-            if (!progressBar || !runnerImg || !countDisplay) return;
+    const progressContainer = tabPane.find('#progressTable');
+    progressContainer.html(html);
 
-            const candidateName = item.Name ? item.Name.replace(/\s+/g, '-') : 'unknown';
-            // Validate Count
-            let rawCount = Number(item.Count);
-            if (isNaN(rawCount)) rawCount = 0;
-            const finalCount = Math.min(rawCount, maxCount);
-            const finalProgress = Math.round((finalCount / maxCount) * 100);
+    data.forEach((item, index) => {
 
-            let current = 0;
-            let hasStartedMoving = false;
+        const progressBar = progressContainer.find(`#bar-${index}`)[0];
+        const runnerImg = progressContainer.find(`#runner-${index}`)[0];
+        const countDisplay = progressContainer.find(`#count-${index}`)[0];
 
-            // If no progress, just set final values without animation
-            if (finalProgress <= 0) {
-                progressBar.style.width = '0%';
-                runnerImg.style.left = '-5%';
-                countDisplay.textContent = finalCount;
-                if (item.Status === "Win") {
-                    runnerImg.src = `assets/images/${candidateName}-Happy.gif`;
-                } else if (item.Status === "Lose") {
-                    runnerImg.src = `assets/images/${candidateName}-Sad.gif`;
-                } else {
-                    runnerImg.src = `assets/images/${candidateName}-Walk.gif`;
-                }
-                return;
+        if (!progressBar || !runnerImg || !countDisplay) return;
+
+        const candidateName = item.Name
+            ? item.Name.replace(/\s+/g, '-')
+            : 'unknown';
+
+        let rawCount = Number(item.Count);
+        if (isNaN(rawCount)) rawCount = 0;
+
+        const finalCount = Math.min(rawCount, maxCount);
+        const finalProgress = Math.round((finalCount / maxCount) * 100);
+
+        const status = item.Status ? item.Status.toLowerCase() : '';
+
+        // Smooth animation
+        progressBar.style.transition = "width 1s linear";
+        runnerImg.style.transition = "left 1s linear";
+
+        // Start RUN
+        runnerImg.src = `assets/images/reaction/${stateName}/${candidateName}-Run.gif`;
+
+        const safeLeft = Math.max(finalProgress - 5, 0);
+
+        // Move
+        progressBar.style.width = `${finalProgress}%`;
+        runnerImg.style.left = `${safeLeft}%`;
+        countDisplay.textContent = finalCount;
+
+        // Final state
+        let finished = false;
+        function setFinalState() {
+            if (finished) return;
+            finished = true;
+
+            if (status === "win") {
+                runnerImg.src = `assets/images/reaction/${stateName}/${candidateName}-Happy.gif`;
+            } else if (status === "lose") {
+                runnerImg.src = `assets/images/reaction/${stateName}/${candidateName}-Sad.gif`;
+            } else {
+                runnerImg.src = `assets/images/reaction/${stateName}/${candidateName}-Run.gif`;
             }
+        }
 
-            const interval = setInterval(() => {
-                if (current < finalProgress) {
-                    current++;
-                    if (!hasStartedMoving) {
-                        hasStartedMoving = true;
-                        runnerImg.src = `assets/images/${candidateName}-Run.gif`;
-                    }
-                    progressBar.style.width = `${current}%`;
-                    runnerImg.style.left = `calc(${current}% - 5%)`;
-                    countDisplay.textContent = Math.round((current / 100) * maxCount);
-                } else {
-                    clearInterval(interval);
-                    // Remove from activeIntervals array
-                    const idx = activeIntervals.indexOf(interval);
-                    if (idx !== -1) activeIntervals.splice(idx, 1);
-                    // Set final exact values
-                    countDisplay.textContent = finalCount;
-                    if (item.Status === "Win") {
-                        runnerImg.src = `assets/images/${candidateName}-Happy.gif`;
-                    } else if (item.Status === "Lose") {
-                        runnerImg.src = `assets/images/${candidateName}-Sad.gif`;
-                    } else {
-                        runnerImg.src = `assets/images/${candidateName}-Walk.gif`;
-                    }
-                }
-            }, 100);
+        // Transition end trigger
+        progressBar.addEventListener("transitionend", function handler(e) {
+            if (e.propertyName !== "width") return;
 
-            activeIntervals.push(interval);
+            progressBar.removeEventListener("transitionend", handler);
+            setFinalState();
         });
-    }
 
+        // Fallback
+        setTimeout(setFinalState, 1200);
+    });
+}
     function setCandidateData(data, tabPane, state) {
     const html = data.map(item => {
         const status = item.Status ? item.Status.toLowerCase() : '';
@@ -210,30 +296,40 @@ $(function() {
     });
 }
 
-    const partyColors = {
-        BJP: '#ff6600',
-        JDU: '#228B22',
-        "CPI(ML)": '#C41301',
-        LPJ: '#5B006A',
-        Congress: '#0F823F',
-        RJD: '#056D05',
-        others: '#cc0000'
-    };
+    // const partyColors = {
+    //     BJP: '#ff6600',
+    //     JDU: '#228B22',
+    //     "CPI(ML)": '#C41301',
+    //     LPJ: '#5B006A',
+    //     Congress: '#0F823F',
+    //     RJD: '#056D05',
+    //     others: '#cc0000'
+    // };
 
-    function setPartyTable(data, tabPane) {
-        let html = '<tbody>';
-        data.forEach(item => {
-            const color = partyColors[item.Party] || '#999';
-            html += `
-                <tr>
-                    <td><span class="dot" style="background-color: ${color};"></span> ${item.Party}</td>
-                    <td class="count">${item.Total}</td>
-                </tr>
-            `;
-        });
-        html += '</tbody>';
-        tabPane.find('#partyTrends').html(html);
-    }
+ function setPartyTable(data, tabPane) {
+    let html = '<tbody>';
+
+    data.forEach(item => {
+        const color = partyColors[item.Party] || '#999';
+        html += `
+            <tr>
+                <td><span class="dot" style="background-color: ${color};"></span> ${item.Party}</td>
+                <td class="count">${item.Total}</td>
+            </tr>
+        `;
+    });
+
+    html += '</tbody>';
+
+    const table = tabPane.find('#partyTrends');
+    table.html(html);
+
+    // ✅ AUTO HEIGHT BASED ON ROW COUNT
+    const rowCount = data.length;
+
+    // Option 1: CSS variable (BEST)
+    table.css('--rows', rowCount);
+}
 
     function getActiveTabPane() {
         const activeTabButton = $('.nav-link.active');
@@ -260,6 +356,7 @@ $(function() {
 
     // Tab change listener
     $('.nav-link').on('shown.bs.tab', function (e) {
+          isInitialLoad = true;
         refreshActiveTab();
     });
 
@@ -268,7 +365,7 @@ $(function() {
         refreshActiveTab();
     }, 10000);
 
-    // Cleanup intervals on page unload (optional)
+  
     $(window).on('beforeunload', function() {
         activeIntervals.forEach(clearInterval);
     });
