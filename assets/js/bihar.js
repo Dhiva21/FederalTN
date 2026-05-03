@@ -1,5 +1,5 @@
 $(function() {
-    const baseUrl = "https://script.google.com/macros/s/AKfycbzZflaqZHHyn6xx_hTJsOqU1e7ubnKQxOScjt7XoJyXeEdsuDqHaArRMyuJ-OUWD6OIFA/exec";
+    const baseUrl = "https://goapi.ptdigital.co.in/tf";
 
     const states = [
         { id: 'tn', name: 'Tamil Nadu', sheet: 'tn_candidate_list',imgFolder: 'tn-candidates', imgSheet: 'tn_img', trendSheet: 'tn_party_trends', totalSeats: 234, targetSeats: 118 },
@@ -30,17 +30,17 @@ let isInitialLoad = true;
     }
 
     tabPane.find('#progressTable').html(skeletonHtml);
-const carouselContainer = tabPane.find('.candidate_carousel');
-     if (carouselContainer.hasClass('owl-loaded')) {
-        carouselContainer.trigger('destroy.owl.carousel');
-        carouselContainer.removeClass('owl-loaded');
-        carouselContainer.find('.owl-stage-outer').children().unwrap();
-    }
+// const carouselContainer = tabPane.find('.candidate_carousel');
+//      if (carouselContainer.hasClass('owl-loaded')) {
+//         carouselContainer.trigger('destroy.owl.carousel');
+//         carouselContainer.removeClass('owl-loaded');
+//         carouselContainer.find('.owl-stage-outer').children().unwrap();
+//     }
 
 
     // Carousel skeleton
     let cardSkeleton = '';
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 1; i++) {
         cardSkeleton += `
         <div class="card">
             <div class="skeleton skeleton-img"></div>
@@ -82,7 +82,7 @@ const carouselContainer = tabPane.find('.candidate_carousel');
             if (isInitialLoad) {
     showSkeleton(tabPane);
     isInitialLoad = false;
-      await new Promise(requestAnimationFrame);
+     
 }
         console.log(`Loading data for ${state.name}...`);
         const [candidates, images, trends] = await Promise.all([
@@ -367,7 +367,7 @@ function setProgressData(data, name, totalSeats, targetSeats, tabPane) {
     // Auto-refresh every 6 seconds (clears intervals before new load)
     setInterval(() => {
         refreshActiveTab();
-    }, 10000);
+    }, 15000);
 
   
     $(window).on('beforeunload', function() {
