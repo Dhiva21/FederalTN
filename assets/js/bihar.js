@@ -1,5 +1,5 @@
 $(function() {
-    const baseUrl = "https://goapi.ptdigital.co.in/tf";
+    const baseUrl = "https://script.google.com/macros/s/AKfycbwo02YrkbcdIvpXpbNYcFqicUA45ZRGJkFSB-IitBz70qkJG9bZbDOhe8devQS19Rc/exec";
 
     const states = [
         { id: 'tn', name: 'Tamil Nadu', sheet: 'tn_candidate_list',imgFolder: 'tn-candidates', imgSheet: 'tn_img', trendSheet: 'tn_party_trends', totalSeats: 234, targetSeats: 118 },
@@ -87,10 +87,11 @@ let isInitialLoad = true;
         console.log(`Loading data for ${state.name}...`);
         const [candidates, images, trends] = await Promise.all([
             fetchSheet(state.sheet),
+           
             fetchSheet(state.imgSheet),
             fetchSheet(state.trendSheet)
         ]);
-
+       
         tabPane.find('.totalCount h4').text(`Total Count - ${state.totalSeats}`);
         tabPane.find('.target_count h3').text(`Target - ${state.targetSeats}`);
 
